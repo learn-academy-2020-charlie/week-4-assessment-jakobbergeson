@@ -6,17 +6,17 @@ fullArr1 = [4, 9, 0, '7', 8, true, 'hey', 7, 199, -9, false, 'hola']
 # Expected output: [-9, 7, 9, 199]
 fullArr2 = ['hello', 7, 23, -823, false, 78, nil, '67', 6, 'Number']
 # Expected output: [-823, 7, 23]
-def finalArray array 
-   numArray = array.select do |value|
+def final_array array 
+   num_array = array.select do |value|
          value.kind_of? Integer
     end
-   oddArray =  numArray.select do |value|
+   odd_array =  num_array.select do |value|
         value % 2 != 0
    end
-   sortedArray = oddArray.sort
+   sorted_array = odd_array.sort
 end
-p finalArray (fullArr1)
-p  finalArray (fullArr2)
+p final_array (fullArr1)
+p final_array (fullArr2)
 
 
 

@@ -8,29 +8,32 @@ var collections = ["purple", "blue", "green", "yellow", "pink"]
 // Expected output example3 (can be a different order): ["pink", "green"]
 
 let shuffleArray = (array) => {
-    if (array.length !== -1) {
-    for (let i = 0; i < array.length; i++) {
+// shift to remove first item of array
         array.shift()
-     }
-    let howLong = array.length
-// While there are elements in the array
-    while (howLong > 0) {
-// Pick a random index
-       let index = Math.floor(Math.random() * howLong)
-// Decrease howLong by 1
-        howLong--
-// And swap the last element with it
-        let swap = array[howLong]
-        array[howLong] = array[index]
-        array[index] = swap
+// loop through the rest of the array
+   for(let index = array.length; index > 0 ; index--) {
+    index --
+// randomly generate whole number between 0 and length of array
+       let randomize = Math.floor(Math.random() * index)
+// temporarily hold current value
+       let tempNum = array[index]
+// reassign current element to the randomly generated index 
+       array[index] = array[randomize]
+        array[randomize] = tempNum
     
-    }
     return array
-} else {
+   }
+// when index is empty retirn "The array is empty"
+   if (array.length == 0) {
     return "The array is empty."
 }
 }
 console.log(shuffleArray(collections))
+console.log(shuffleArray(collections))
+console.log(shuffleArray(collections))
+console.log(shuffleArray(collections))
+console.log(shuffleArray(collections))
+
 
 
 
